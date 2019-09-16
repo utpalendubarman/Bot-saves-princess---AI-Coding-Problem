@@ -1,0 +1,39 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    char map[n][n];
+    int botx,boty, prinx, priny;
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            cin>>map[j][i];
+        }
+    }
+    
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            if(map[j][i]=='p'){
+                prinx=j;
+                priny=i;
+            }
+            if(map[j][i]=='m'){
+                botx=j;
+                boty=i;
+            }    
+        }
+    }
+
+    
+ 
+    if((boty-priny)>0)
+        cout<<"UP";
+    if((boty-priny)<0)
+        cout<<"DOWN";
+    if((botx-prinx)>0)
+        cout<<"LEFT";
+    if((botx-prinx)<0)
+        cout<<"RIGHT";
+    return 0;
+}
